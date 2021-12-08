@@ -1,0 +1,33 @@
+package com.greycampus.dao;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.support.JdbcDaoSupport;
+import org.springframework.stereotype.Repository;
+
+import com.greycampus.entity.Customer;
+import com.greycampus.repo.CustomerRepo;
+
+@Repository
+public class CustomerDAO extends JdbcDaoSupport {
+	
+	@Autowired
+	private CustomerRepo customerRepo;
+	@Autowired
+	private JdbcTemplate jdbcTemplate;
+	
+	public CustomerDAO(JdbcTemplate jdbcTemplate) {
+		this.setJdbcTemplate(jdbcTemplate);
+	}
+	
+	public void save(Customer customer) {
+		customerRepo.save(customer);
+	}
+	public void update(Customer customer) {
+		customerRepo.save(customer);
+	}
+	public void delete(int cid) {
+		customerRepo.deleteById(cid);
+	}
+
+}

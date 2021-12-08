@@ -1,0 +1,102 @@
+package com.greycampus.entity;
+
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+@Table(name = "cust_tbl")
+@Entity
+public class Customer {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "emp_seq")
+	@SequenceGenerator(name = "emp_seq", sequenceName = "my_seq", allocationSize = 1,initialValue = 1)
+	@Column(name="eno")
+	private Integer cid;
+	private String name;
+	private String type;
+	private Number phone;
+	private String street;
+	private String city;
+	private String state;
+	private String country;
+	
+	
+	
+	public Customer() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public Customer(Integer cid, String name, String type, Number phone, String street, String city, String state,
+			String country, String createdby, Date date, String updatedby) {
+		super();
+		this.cid = cid;
+		this.name = name;
+		this.type = type;
+		this.phone = phone;
+		this.street = street;
+		this.city = city;
+		this.state = state;
+		this.country = country;
+		
+	}
+	public Integer getCid() {
+		return cid;
+	}
+	public void setCid(Integer cid) {
+		this.cid = cid;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	public Number getPhone() {
+		return phone;
+	}
+	public void setPhone(Number phone) {
+		this.phone = phone;
+	}
+	public String getStreet() {
+		return street;
+	}
+	public void setStreet(String street) {
+		this.street = street;
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	public String getState() {
+		return state;
+	}
+	public void setState(String state) {
+		this.state = state;
+	}
+	public String getCountry() {
+		return country;
+	}
+	public void setCountry(String country) {
+		this.country = country;
+	}
+	
+	
+	
+	
+
+}

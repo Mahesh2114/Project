@@ -1,0 +1,64 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="/save" method="post">
+
+		<div>
+			<label>Customer No</label><input type="text" name="cid">
+		</div>
+		<div>
+			<label>Customer Name</label><input type="text" name="name">
+		</div>
+		<div>
+			<label for="type">Customer Type</label> <select name="type" id="type">
+				<option value="select">Select</option>
+				<option value="cheap">Cheap Customer</option>
+				<option value="educated">Educated Customer</option>
+				<option value="driven">Driven Customer</option>
+			</select>
+		</div>
+		<div>
+			<label>Phone No</label><input type="text" name="phone">
+		</div>
+		<div>
+			<label>Customer Address :</label><br> <label>Street</label><input
+				type="text" name="street"> <br>
+		</div>
+		<div>
+			<label>Country</label> 
+			<select name="country" id="Country"	onchange="setStates();">
+				<option selected="" value="-1" disabled="">Select Country</option>
+				<option value="">Please Select a Country</option>
+				<option value="India">India</option>
+				<option value="USA">USA</option>
+			</select>
+		</div><br>
+		<div>
+			<label>State</label> 
+			<select name="state" id="state" onchange="setCity();">
+				<option selected="" value="-1" disabled="">Select State</option>
+				<option value="">Please Select a State</option>
+			</select>
+		</div><br>
+		<div>
+			<label>City</label> 
+			<select name="city" id="city">
+				<option selected="" value="-1" disabled="">Select City</option>
+				<option value="">Please Select a City</option>
+			</select>
+		</div><br>
+		<div>
+			<label>Created By</label><input type="text" name="created_by">
+		</div>
+		<div>
+			<button type="submit">Save</button>
+		</div>
+	</form>
+</body>
+</html>

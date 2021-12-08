@@ -1,0 +1,25 @@
+package com.greycampus.dao;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.greycampus.CustomerRepo;
+import com.greycampus.entity.Customer;
+
+@Repository
+public class CustomerDAO {
+	
+	@Autowired
+	private CustomerRepo customerRepo;
+	
+	public void save(Customer customer) {
+		customerRepo.save(customer);
+	}
+	public void update(Customer customer) {
+		customerRepo.save(customer);
+	}
+	public void delete(int cid) {
+		customerRepo.deleteById(cid);
+	}
+
+}

@@ -1,0 +1,21 @@
+package com.greycampus.repo;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+
+import com.greycampus.entity.Customer;
+
+public interface CustomerRepo extends CrudRepository<Customer, Integer> {
+	
+	public List<Customer> findByName(String name);
+	
+	public List<Customer> findByCid(Integer cid);
+	
+	public String findByPhone(Long phone);
+	
+	@Query(value ="select * from emp_tbl",nativeQuery = true)
+	public List<Customer> fetchAll();
+
+}

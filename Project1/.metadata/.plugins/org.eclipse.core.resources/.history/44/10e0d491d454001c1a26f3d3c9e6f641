@@ -1,0 +1,36 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="" method="post">
+
+		<div>
+			<label>Customer Name</label><input type="text" name="name">
+		</div>
+		<div>
+			<label>Customer Type</label> 
+			<select>
+				<option value="volvo">Cheap Customer</option>
+				<option value="saab">Educated Customer</option>
+				<option value="opel">Driven Customer</option>
+			</select>
+		</div>
+		<div>
+			<label>Phone No</label><input type="text" name="phone">
+		</div>
+		<div>
+			<label>Customer Address :</label> <label>Street</label><input
+				type="text" name="street"> <label>City</label><input
+				type="text" name="city">
+		</div>
+		<div>
+			<button type="submit">Save</button>
+		</div>
+	</form>
+</body>
+</html>

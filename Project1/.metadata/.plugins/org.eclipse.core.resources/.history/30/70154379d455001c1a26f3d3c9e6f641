@@ -1,0 +1,46 @@
+package com.greycampus.dao;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.greycampus.entity.Customer;
+import com.greycampus.repo.CustomerRepo;
+
+@Repository
+public class CustomerDAO {
+
+	@Autowired
+	private CustomerRepo customerRepo;
+
+	public void save(Customer customer) {
+		customerRepo.save(customer);
+	}
+
+	public void update(Customer customer) {
+		customerRepo.save(customer);
+	}
+
+	public void delete(int cid) {
+		customerRepo.deleteById(cid);
+	}
+//	
+//	public List<Customer> fetchbycid(Customer customer) {
+//	    List<Customer> customer1 = customerRepo.findByCid(customer.getCid());
+//		ArrayList<Customer> list = new ArrayList<Customer>();
+//		list.add(customer1);
+//		return list;
+//	}
+
+	public List<Customer> fetchbyname(Customer customer) {
+		List<Customer> list = customerRepo.findByName(customer.getName());
+		return list;
+	}
+
+	public List<Customer> fetchall() {
+		Iterable<Customer> userlist = customerRepo.findAll();
+		return (List<Customer>) userlist;
+	}
+}

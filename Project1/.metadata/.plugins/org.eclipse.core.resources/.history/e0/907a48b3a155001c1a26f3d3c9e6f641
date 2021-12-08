@@ -1,0 +1,71 @@
+package com.greycampus.entity;
+
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+@Table(name = "cust_tbl")
+@Entity
+public class Customer {
+	
+	@Id
+	private Integer cid;
+	private String name;
+	private String street;
+	private String city;
+	
+	
+	
+	
+	public Customer() {
+		super();
+		
+	}
+	public Customer(Integer cid, String name, String type, Number phone, String street, String city, String state,
+			String country, String createdby, Date date, String updatedby) {
+		super();
+		this.cid = cid;
+		this.name = name;
+		this.street = street;
+		this.city = city;
+		
+	}
+	public Integer getCid() {
+		return cid;
+	}
+	public void setCid(Integer cid) {
+		this.cid = cid;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+
+	public String getStreet() {
+		return street;
+	}
+	public void setStreet(String street) {
+		this.street = street;
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	
+	
+	
+	
+	
+
+}
